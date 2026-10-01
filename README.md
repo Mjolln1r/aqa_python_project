@@ -40,7 +40,6 @@ pytest tests/ -v
 pytest tests/ -v --alluredir=allure-results
 allure serve allure-results
 ```
-
 ## CI/CD
 GitHub Actions автоматически запускает тесты при push в main.
 Allure результаты сохраняются как артефакт после каждого прогона.
