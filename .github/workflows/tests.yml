@@ -26,3 +26,13 @@ jobs:
 
       - name: Run API tests
         run: pytest tests/ -v --alluredir=allure-results
+
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results/
+
+      - name: Run API tests
+        run: pytest tests/ -v -k "not test_ui"
