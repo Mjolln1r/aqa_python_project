@@ -28,7 +28,7 @@ jobs:
         run: pytest tests/ -v --alluredir=allure-results
 
       - name: Upload Allure results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact
         if: always()
         with:
           name: allure-results
