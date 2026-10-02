@@ -1,8 +1,6 @@
-FROM python:3.12-slim
-LABEL authors="Приложение которок поднимается само после его закрытия"
-EXPOSE 8000
-RUN useradd -m appuser
-USER appuser
-WORKDIR /myservice
-COPY . /myservice
-CMD ["python3", "-u", "service.py"]
+FROM mcr.microsoft.com/playwright/python:v1.63.0-jammy
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+CMD ["pytest", "tests/", "-v", "--alluredir=allure-results"]
