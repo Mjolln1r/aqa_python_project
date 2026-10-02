@@ -1,3 +1,4 @@
+![CI](https://github.com/Mjolln1r/aqa_python_project/actions/workflows/tests.yml/badge.svg)
 # AQA Python Project
 
 Учебный проект для практики автоматизации тестирования на Python.
