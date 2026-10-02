@@ -5,7 +5,7 @@ from client.api_client import GetApi
 from client.api_client import PostApi
 import pytest
 
-from tests.pages.example_page import ExamplePage
+from pages.example_page import ExamplePage
 
 BASE_URL = "https://jsonplaceholder.typicode.com"
 

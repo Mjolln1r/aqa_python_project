@@ -1,16 +1,10 @@
 import pytest
 from jsonschema import validate
-from schemes import user_schema
-from pydantic import BaseModel
+from schemes.schemes import user_schema
+from schemes.paydantic_schemes import UserSchema
 import allure
 from playwright.sync_api import Page
 from playwright.sync_api import expect
-
-
-class UserSchema(BaseModel):
-    id: int
-    name: str
-    email: str
 
 
 def test_get_user_pydantic(api_client):
@@ -94,6 +88,7 @@ def test_create_user_post(post_api):
 def test_ui(page: Page):
     page.goto("https://example.com/")
     expect(page.get_by_role("link", name="Learn more")).to_be_visible()
+
 
 def test_example_page(example_page):
     example_page.open_url()
